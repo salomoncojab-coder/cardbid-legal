@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy Policy · CardBid</title><link rel="stylesheet" href="estilo.css"></head><body><main>
+<nav><a href="index.html">Español</a><a href="privacy.html">Privacy</a><a href="soporte.html">Support</a></nav>
+<h1>CardBid Privacy Policy</h1>
+<div class="meta">Last updated: September 28, 2026</div>
+<p>CardBid is a price-reference tool for live collectible card auctions. This policy describes what the app does with your data, written to match what the app actually does.</p>
+<h2>1. Your account</h2>
+<p>CardBid uses <strong>Sign in with Apple</strong>. We do not ask for a password, email, phone number or date of birth. Apple gives us an opaque identifier that only works inside CardBid, plus your name if you choose to share it. You also pick a username inside the app. These are stored <strong>only on your device</strong>. There is no account server: nothing is sent, synced or visible to us.</p>
+<p>You can sign out or delete your account from Profile; that removes the identifier, name and username from your device. Your collection and settings stay until you delete the app. To revoke on Apple's side: iOS Settings, your name, Sign-In &amp; Security, Sign in with Apple.</p>
+<h2>2. Screen reading</h2>
+<p>To recognize a card while you watch an auction, CardBid uses Apple's screen broadcast extension (ReplayKit). <strong>It runs only when you start it</strong>, from the app or Control Center, and stops when you stop it. iOS shows the recording indicator the whole time.</p>
+<p><strong>Frames never leave your device.</strong> They are analyzed in memory and discarded. They are not written to files, uploaded or kept. Text and card-art recognition run on the device with a catalog bundled in the app.</p>
+<p>What the app keeps from a session is the result: which card it identified, the reference price and limit it computed, and whether you won the lot. That feeds your purchase history, which lives on your device. As a diagnostic, the app may keep on your device up to 20 short fragments of screen text it could not interpret; they never leave the device and are continuously overwritten.</p>
+<h2>3. Your username on the auction platform</h2>
+<p>You may enter in Settings the username you use on the auction platform. CardBid uses it for one thing: comparing the on-screen text when a lot closes with your name, to know whether you won. It is stored on your device and never sent. CardBid does not access your account on that platform, does not use its APIs and does not interact with it in any way.</p>
+<h2>4. What does leave your device</h2>
+<ul>
+<li><strong>Price lookups.</strong> When the app identifies a card, it may ask price providers (PokemonPriceTracker per card; PriceCharting as a periodic price-table download). What is sent is the card's name, number and set, the same information printed on it, together with CardBid's own access credential. No identifier of yours is attached.</li>
+<li><strong>Card images.</strong> To show a card's art, the app may download its image from a public card-reference site. The request carries the card's identifier, not yours.</li>
+<li><strong>Live Activity updates.</strong> So the Dynamic Island can update while you are in another app, iOS requires updates to arrive as push notifications. The app sends the current verdict (identified card name, amounts read from the auction screen and the computed limit) to a relay server operated by CardBid, which forwards it to Apple's notification service and on to your device. The relay does not store message content; its technical log records the card identifier and delivery result for a limited time, for diagnostics. During the beta, the connection between the app and the relay is not encrypted in transit; the message contains no personal data about you.</li>
+<li><strong>Apple crash diagnostics</strong>, only if you enabled "Share with App Developers" in iOS settings. Handled by Apple, anonymous.</li>
+</ul>
+<h2>5. What stays on your device</h2>
+<p>Your collection (including CSV imports), purchase history, portfolio value series, cached prices, your limit rules (fees, shipping, margin) and the photos you pick from your library to illustrate cards. A thumbnail of each photo is stored in the app's private space; the original is untouched. None of this is uploaded and we cannot see it. Deleting the app deletes it.</p>
+<h2>6. We do not sell or share your data</h2>
+<p>CardBid has no ads, no analytics SDKs, no third-party trackers, and does not use the advertising identifier. We do not sell data and do not share it with anyone beyond the price providers and Apple, as described in section 4.</p>
+<h2>7. What CardBid does not do</h2>
+<ul><li>It does not bid, click or transact for you. It only shows a number.</li><li>It does not access accounts or credentials of any auction platform.</li><li>It does not use unofficial interfaces or scrape those platforms.</li><li>It does not publish or redistribute seller content.</li></ul>
+<h2>8. Children</h2><p>CardBid is not directed at children under 13 and we do not knowingly collect information from them.</p>
+<h2>9. Your choices</h2><ul><li>Stop screen reading at any time by stopping the broadcast.</li><li>Turn off Live Activities for CardBid in iOS Settings to stop push updates.</li><li>Delete your account from Profile; delete the app to remove everything else.</li></ul>
+<h2>10. Changes</h2><p>If this policy changes, the date above changes with it. Changes that expand what leaves your device will be announced inside the app before they apply.</p>
+<h2>11. Contact</h2><p>Questions: <a href="mailto:cardbidai@gmail.com">cardbidai@gmail.com</a>. CardBid is published by the holder of the Apple developer account shown on the App Store listing.</p>
+<hr><footer>CardBid · <a href="soporte.html">Support</a> · <a href="index.html">Versión en español</a></footer>
+</main></body></html>
