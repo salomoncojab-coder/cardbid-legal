@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy Policy · BidCap</title><link rel="stylesheet" href="estilo.css"></head><body><main>
 <nav><a href="index.html">Español</a><a href="privacy.html">Privacy</a><a href="soporte.html">Support</a></nav>
 <h1>BidCap Privacy Policy</h1>
-<div class="meta">Last updated: October 10, 2026 · BidCap was previously called CardBid</div>
+<div class="meta">Last updated: October 18, 2026 · BidCap was previously called CardBid</div>
 <p>BidCap is a price-reference tool for live collectible card auctions. This policy describes what the app does with your data, written to match what the app actually does.</p>
 <h2>1. Your account</h2>
 <p>BidCap uses <strong>Sign in with Apple</strong>. We do not ask for a password, email, phone number or date of birth. Apple gives us an opaque identifier that only works inside BidCap, plus your name if you choose to share it. You also pick a username inside the app. These are stored <strong>only on your device</strong>. There is no account server: nothing is sent, synced or visible to us.</p>
@@ -14,10 +14,11 @@
 <p>You may enter in Settings the username you use on the auction platform. BidCap uses it for one thing: comparing the on-screen text when a lot closes with your name, to know whether you won. It is stored on your device and never sent. BidCap does not access your account on that platform, does not use its APIs and does not interact with it in any way.</p>
 <h2>4. What leaves your device by default</h2>
 <ul>
-<li><strong>Price lookups.</strong> When the app identifies a card, it may ask price providers (PokemonPriceTracker per card; PriceCharting as a periodic price-table download). What is sent is the card's name, number and set (and, when relevant, its edition or language), or the text you type in a manual search, together with BidCap's own access credential; the periodic PriceCharting download sends only that credential. No identifier of yours is attached.</li>
+<li><strong>Price lookups.</strong> When the app identifies a card, it asks BidCap's price server (api.bidcap.app) for that card's market value, and periodically downloads BidCap's price table from the same server. What is sent is the card's name, number and set (and, when relevant, its edition, language or variant), together with BidCap's own access credential. No identifier of yours is attached. BidCap's server gets prices from price-data providers (such as PriceCharting and PokemonPriceTracker). In a manual search, the text you type may be sent directly to PokemonPriceTracker in the same way.</li>
 <li><strong>Card images.</strong> To show a card's art, the app may download its image from a public card-reference site. The request carries the card's identifier, not yours.</li>
 <li><strong>Live Activity updates.</strong> So the Dynamic Island can update while you are in another app, iOS requires updates to arrive as push notifications. The app sends the current verdict (identified card name, amounts read from the auction screen and the computed limit), together with the Live Activity push token Apple issues so the notification reaches your device, over an encrypted connection (HTTPS) to a relay server operated by BidCap, which forwards it to Apple's notification service and on to your device. The relay does not store message content; its technical log records the card identifier and delivery result, and the network address of rejected (unauthorized) requests, for diagnostics and security, and is kept for 30 days.</li>
 <li><strong>Learned cards.</strong> At the start of a session the app may download, over HTTPS, the list of cards BidCap's server has added to the catalog. Nothing about you is sent.</li>
+<li><strong>Card-art packs.</strong> The app may download packs of numeric card-art fingerprints (not photos) from packs.bidcap.app so it can recognize cards on the device. Nothing about you is sent.</li>
 <li><strong>Apple crash diagnostics</strong>, only if you enabled "Share with App Developers" in iOS settings. Handled by Apple, anonymous.</li>
 </ul>
 <h2>5. Optional features (off by default)</h2>
@@ -25,7 +26,7 @@
 <h3>AI Maestro (OpenAI)</h3>
 <p>An assistant that uses OpenAI's API to help identify cards and explain prices. When it is on, BidCap sends over HTTPS to its server, which forwards it to OpenAI for analysis:</p>
 <ul>
-<li><strong>During a live auction:</strong> a reduced image of the central part of your screen (at most 900 pixels on its long side), usually one per lot, only when BidCap could not recognize the card, or to check whether an identified card carries a printed stamp (for example "1st Edition"); for the stamp check, together with the card's name, number and its possible stamped versions.</li>
+<li><strong>During a live auction:</strong> a reduced image of the central part of your screen (the full width and about three quarters of its height, at most 900 pixels on its long side), usually one per lot, only when BidCap could not recognize the card, or to check whether an identified card carries a printed stamp (for example "1st Edition"); for the stamp check, together with the card's name, number and its possible stamped versions. The image may include whatever else is visible in that area of the broadcast, such as chat text.</li>
 <li><strong>In a card's detail screen:</strong> the card's data (name, set, number, variant, language, condition, grade, market prices and the recent sales behind them) and, only if you ask how the card fits your collection, a summary of your portfolio (number of copies and total value).</li>
 <li>A random installation identifier created by the app.</li>
 </ul>

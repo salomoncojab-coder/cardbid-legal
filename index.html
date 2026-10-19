@@ -1,7 +1,7 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Política de privacidad · BidCap</title><link rel="stylesheet" href="estilo.css"></head><body><main>
 <nav><a href="index.html">Privacidad</a><a href="privacy.html">English</a><a href="soporte.html">Soporte</a></nav>
 <h1>Política de privacidad de BidCap</h1>
-<div class="meta">Última actualización: 10 de octubre de 2026 · BidCap antes se llamaba CardBid</div>
+<div class="meta">Última actualización: 18 de octubre de 2026 · BidCap antes se llamaba CardBid</div>
 <p>BidCap es una herramienta de referencia de precios para subastas de cartas coleccionables en vivo. Esta política describe qué hace la app con tus datos, escrita para coincidir con lo que la app hace y no con una plantilla.</p>
 <h2>1. Tu cuenta</h2>
 <p>BidCap usa <strong>Sign in with Apple</strong>. No pedimos contraseña, correo, teléfono ni fecha de nacimiento. Apple nos entrega un identificador opaco que sólo sirve dentro de BidCap, y tu nombre si decides compartirlo. Tú además escoges un nombre de usuario dentro de la app. Estos datos se guardan <strong>únicamente en tu dispositivo</strong>. No existe un servidor de cuentas: no se envían, no se sincronizan y no podemos verlos.</p>
@@ -14,10 +14,11 @@
 <p>Puedes escribir en Ajustes el nombre de usuario que usas en la plataforma de subastas. BidCap lo usa para una sola cosa: comparar el texto en pantalla al cerrar un lote con tu nombre, para saber si ganaste. Se guarda en tu dispositivo y nunca se envía. BidCap no accede a tu cuenta en esa plataforma, no usa sus APIs y no interactúa con ella de ninguna forma.</p>
 <h2>4. Lo que sale de tu dispositivo por omisión</h2>
 <ul>
-<li><strong>Consultas de precio.</strong> Cuando la app identifica una carta, puede consultar a proveedores de precios (PokemonPriceTracker por carta; PriceCharting como descarga periódica de la tabla de precios). Se envía el nombre, número y set de la carta (y, cuando aplica, su edición o idioma), o el texto que escribas en una búsqueda manual, junto con la credencial de acceso propia de BidCap; la descarga periódica de PriceCharting envía sólo esa credencial. No se adjunta ningún identificador tuyo.</li>
+<li><strong>Consultas de precio.</strong> Cuando la app identifica una carta, pregunta su valor de mercado al servidor de precios de BidCap (api.bidcap.app) y cada cierto tiempo baja de ahí la tabla de precios de BidCap. Se envía el nombre, número y set de la carta (y, cuando aplica, edición, idioma o variante) junto con la credencial de acceso de BidCap. No se adjunta ningún identificador tuyo. El servidor de BidCap obtiene los precios de proveedores de datos de precios (como PriceCharting y PokemonPriceTracker). En una búsqueda manual, el texto que escribes puede ir directo a PokemonPriceTracker de la misma forma.</li>
 <li><strong>Imágenes de cartas.</strong> Para mostrar el arte de una carta, la app puede descargar su imagen de un sitio público de referencia. La solicitud lleva el identificador de la carta, no el tuyo.</li>
 <li><strong>Actualizaciones de la Actividad en vivo.</strong> Para que la Dynamic Island se actualice mientras estás en otra app, iOS exige que las actualizaciones lleguen como notificaciones push. La app envía el veredicto actual (nombre de la carta identificada, montos leídos de la pantalla de subasta y el tope calculado), junto con el token push de la Actividad en vivo que Apple emite para que la notificación llegue a tu dispositivo, por una conexión cifrada (HTTPS) a un servidor de reenvío operado por BidCap, que lo pasa al servicio de notificaciones de Apple y de ahí a tu dispositivo. El servidor no guarda el contenido de los mensajes; su registro técnico anota el identificador de la carta y el resultado de la entrega, y la dirección de red de las solicitudes rechazadas (no autorizadas), para diagnóstico y seguridad, y se conserva 30 días.</li>
 <li><strong>Cartas aprendidas.</strong> Al iniciar una sesión, la app puede descargar por HTTPS la lista de cartas que el servidor de BidCap agregó al catálogo. No se envía nada tuyo.</li>
+<li><strong>Paquetes de arte.</strong> La app puede bajar de packs.bidcap.app paquetes de huellas numéricas del arte de las cartas (no fotos) para reconocerlas en tu teléfono. No se envía nada tuyo.</li>
 <li><strong>Diagnósticos de fallas de Apple</strong>, sólo si activaste «Compartir con desarrolladores» en Ajustes de iOS. Los maneja Apple, de forma anónima.</li>
 </ul>
 <h2>5. Funciones opcionales (apagadas por omisión)</h2>
@@ -25,7 +26,7 @@
 <h3>Maestro con IA (OpenAI)</h3>
 <p>Un asistente que usa la API de OpenAI para ayudar a identificar cartas y explicar precios. Cuando está encendido, BidCap envía por HTTPS a su servidor, y éste a OpenAI para su análisis:</p>
 <ul>
-<li><strong>Durante una subasta en vivo:</strong> una imagen reducida de la parte central de tu pantalla (como máximo 900 píxeles por su lado largo), normalmente una por lote, sólo cuando BidCap no reconoció la carta, o para ver si una carta identificada trae un sello impreso (por ejemplo «1st Edition»); para revisar el sello, junto con el nombre, el número y las posibles versiones con sello de la carta.</li>
+<li><strong>Durante una subasta en vivo:</strong> una imagen reducida de la parte central de tu pantalla (todo el ancho y cerca de tres cuartas partes del alto, como máximo 900 píxeles por su lado largo), normalmente una por lote, sólo cuando BidCap no reconoció la carta, o para ver si una carta identificada trae un sello impreso (por ejemplo «1st Edition»); para revisar el sello, junto con el nombre, el número y las posibles versiones con sello de la carta. La imagen puede incluir lo demás que se vea en esa zona de la transmisión, como el texto del chat.</li>
 <li><strong>En la ficha de una carta:</strong> sus datos (nombre, set, número, variante, idioma, condición, grado, precios de mercado y las ventas recientes que los respaldan) y, sólo si preguntas cómo encaja en tu colección, un resumen de tu portafolio (copias y valor total).</li>
 <li>Un identificador aleatorio de instalación creado por la app.</li>
 </ul>
